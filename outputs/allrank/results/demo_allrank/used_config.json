@@ -1,0 +1,54 @@
+{
+  "model": {
+    "fc_model": {
+      "sizes": [
+        64,
+        32
+      ],
+      "input_norm": true,
+      "activation": "ReLU",
+      "dropout": 0.1
+    },
+    "transformer": null,
+    "post_model": {
+      "d_output": 1,
+      "output_activation": null
+    }
+  },
+  "data": {
+    "path": "data\\demo\\allrank",
+    "num_workers": 0,
+    "batch_size": 16,
+    "slate_length": 15,
+    "validation_ds_role": "vali"
+  },
+  "optimizer": {
+    "name": "Adam",
+    "args": {
+      "lr": 0.001
+    }
+  },
+  "training": {
+    "epochs": 5,
+    "gradient_clipping_norm": 1.0,
+    "early_stopping_patience": 2
+  },
+  "loss": {
+    "name": "lambdaLoss",
+    "args": {
+      "weighing_scheme": "lambdaRank_scheme",
+      "k": 10
+    }
+  },
+  "metrics": [
+    "ndcg_5",
+    "ndcg_10"
+  ],
+  "lr_scheduler": {
+    "name": "",
+    "args": {}
+  },
+  "val_metric": "ndcg_10",
+  "expected_metrics": {},
+  "detect_anomaly": false
+}

@@ -1,0 +1,64 @@
+2026-06-05 09:13:02,811 - allrank.utils.ltr_logging - INFO - created paths container PathsContainer(local_base_output_path='outputs\\allrank', base_output_path='outputs\\allrank', output_dir='outputs\\allrank\\results\\demo_allrank', tensorboard_output_path='outputs\\allrank\\tb_evals\\single\\demo_allrank', config_path='outputs\\allrank\\allrank_config.json')
+2026-06-05 09:14:00,614 - allrank.utils.ltr_logging - INFO - created paths container PathsContainer(local_base_output_path='outputs\\allrank', base_output_path='outputs\\allrank', output_dir='outputs\\allrank\\results\\demo_allrank', tensorboard_output_path='outputs\\allrank\\tb_evals\\single\\demo_allrank', config_path='outputs\\allrank\\allrank_config.json')
+2026-06-05 09:14:00,631 - allrank.utils.ltr_logging - INFO - Config:
+ {'click_model': None,
+ 'data': DataConfig(path='data\\demo\\allrank', num_workers=0, batch_size=16, slate_length=15, validation_ds_role='vali'),
+ 'detect_anomaly': False,
+ 'expected_metrics': {},
+ 'loss': NameArgsConfig(name='lambdaLoss', args={'weighing_scheme': 'lambdaRank_scheme', 'k': 10}),
+ 'lr_scheduler': NameArgsConfig(name='', args={}),
+ 'metrics': defaultdict(<class 'list'>,
+                        {'ndcg': [5,
+                                  10]}),
+ 'model': ModelConfig(fc_model={'sizes': [64, 32], 'input_norm': True, 'activation': 'ReLU', 'dropout': 0.1}, transformer=None, post_model={'d_output': 1, 'output_activation': None}),
+ 'optimizer': NameArgsConfig(name='Adam', args={'lr': 0.001}),
+ 'training': TrainingConfig(epochs=5, gradient_clipping_norm=1.0, early_stopping_patience=2),
+ 'val_metric': 'ndcg_10'}
+2026-06-05 09:14:00,631 - allrank.utils.ltr_logging - INFO - will execute cp outputs\allrank\allrank_config.json outputs\allrank\results\demo_allrank\used_config.json
+2026-06-05 09:14:00,659 - allrank.utils.ltr_logging - INFO - exit_code = 1
+2026-06-05 09:15:18,836 - allrank.utils.ltr_logging - INFO - created paths container PathsContainer(local_base_output_path='outputs\\allrank', base_output_path='outputs\\allrank', output_dir='outputs\\allrank\\results\\demo_allrank', tensorboard_output_path='outputs\\allrank\\tb_evals\\single\\demo_allrank', config_path='outputs\\allrank\\allrank_config.json')
+2026-06-05 09:15:18,852 - allrank.utils.ltr_logging - INFO - Config:
+ {'click_model': None,
+ 'data': DataConfig(path='data\\demo\\allrank', num_workers=0, batch_size=16, slate_length=15, validation_ds_role='vali'),
+ 'detect_anomaly': False,
+ 'expected_metrics': {},
+ 'loss': NameArgsConfig(name='lambdaLoss', args={'weighing_scheme': 'lambdaRank_scheme', 'k': 10}),
+ 'lr_scheduler': NameArgsConfig(name='', args={}),
+ 'metrics': defaultdict(<class 'list'>,
+                        {'ndcg': [5,
+                                  10]}),
+ 'model': ModelConfig(fc_model={'sizes': [64, 32], 'input_norm': True, 'activation': 'ReLU', 'dropout': 0.1}, transformer=None, post_model={'d_output': 1, 'output_activation': None}),
+ 'optimizer': NameArgsConfig(name='Adam', args={'lr': 0.001}),
+ 'training': TrainingConfig(epochs=5, gradient_clipping_norm=1.0, early_stopping_patience=2),
+ 'val_metric': 'ndcg_10'}
+2026-06-05 09:15:18,852 - allrank.utils.ltr_logging - INFO - will execute cp outputs\allrank\allrank_config.json outputs\allrank\results\demo_allrank\used_config.json
+2026-06-05 09:15:18,886 - allrank.utils.ltr_logging - INFO - exit_code = 0
+2026-06-05 09:15:18,886 - allrank.utils.ltr_logging - INFO - will load train data from data\demo\allrank\train.txt
+2026-06-05 09:15:19,086 - allrank.utils.ltr_logging - INFO - loaded dataset from <_io.BufferedReader name='data\\demo\\allrank\\train.txt'> and got x shape (3000, 20), y shape (3000,) and query_ids shape (3000,)
+2026-06-05 09:15:19,103 - allrank.utils.ltr_logging - INFO - loaded dataset with 200 queries
+2026-06-05 09:15:19,103 - allrank.utils.ltr_logging - INFO - longest query had 15 documents
+2026-06-05 09:15:19,103 - allrank.utils.ltr_logging - INFO - train DS shape: [200, 15, 20]
+2026-06-05 09:15:19,120 - allrank.utils.ltr_logging - INFO - will load vali data from data\demo\allrank\vali.txt
+2026-06-05 09:15:19,153 - allrank.utils.ltr_logging - INFO - loaded dataset from <_io.BufferedReader name='data\\demo\\allrank\\vali.txt'> and got x shape (1200, 20), y shape (1200,) and query_ids shape (1200,)
+2026-06-05 09:15:19,153 - allrank.utils.ltr_logging - INFO - loaded dataset with 80 queries
+2026-06-05 09:15:19,153 - allrank.utils.ltr_logging - INFO - longest query had 15 documents
+2026-06-05 09:15:19,153 - allrank.utils.ltr_logging - INFO - vali DS shape: [80, 15, 20]
+2026-06-05 09:15:19,153 - allrank.utils.ltr_logging - INFO - Will pad to the longest slate: 15
+2026-06-05 09:15:19,619 - allrank.utils.ltr_logging - INFO - total batch size is 16
+2026-06-05 09:15:19,619 - allrank.utils.ltr_logging - INFO - Model training will execute on cpu
+2026-06-05 09:15:20,052 - allrank.utils.ltr_logging - INFO - Model has 3497 trainable parameters
+2026-06-05 09:15:20,052 - allrank.utils.ltr_logging - INFO - Current learning rate: 0.001
+2026-06-05 09:15:23,369 - allrank.utils.ltr_logging - INFO - Epoch : 0 Train loss: 17.149289627075195 Val loss: 17.20433120727539 Train ndcg_5 0.6595655679702759 Train ndcg_10 0.7589769959449768 Val ndcg_5 0.6874247789382935 Val ndcg_10 0.7686014771461487
+2026-06-05 09:15:23,369 - allrank.utils.ltr_logging - INFO - Current:0.7686014771461487 Best:0.0
+2026-06-05 09:15:23,369 - allrank.utils.ltr_logging - INFO - Current learning rate: 0.001
+2026-06-05 09:15:23,519 - allrank.utils.ltr_logging - INFO - Epoch : 1 Train loss: 15.205415573120117 Val loss: 14.790609550476074 Train ndcg_5 0.7900057435035706 Train ndcg_10 0.8519859313964844 Val ndcg_5 0.8244979977607727 Val ndcg_10 0.870404839515686
+2026-06-05 09:15:23,519 - allrank.utils.ltr_logging - INFO - Current:0.870404839515686 Best:0.7686014771461487
+2026-06-05 09:15:23,519 - allrank.utils.ltr_logging - INFO - Current learning rate: 0.001
+2026-06-05 09:15:23,686 - allrank.utils.ltr_logging - INFO - Epoch : 2 Train loss: 12.960399055480957 Val loss: 12.183045196533204 Train ndcg_5 0.8471534848213196 Train ndcg_10 0.8950625658035278 Val ndcg_5 0.8763724565505981 Val ndcg_10 0.9070331454277039
+2026-06-05 09:15:23,686 - allrank.utils.ltr_logging - INFO - Current:0.9070331454277039 Best:0.870404839515686
+2026-06-05 09:15:23,686 - allrank.utils.ltr_logging - INFO - Current learning rate: 0.001
+2026-06-05 09:15:23,836 - allrank.utils.ltr_logging - INFO - Epoch : 3 Train loss: 10.369140148162842 Val loss: 9.528372764587402 Train ndcg_5 0.8721171021461487 Train ndcg_10 0.913120448589325 Val ndcg_5 0.8997241854667664 Val ndcg_10 0.9291156530380249
+2026-06-05 09:15:23,836 - allrank.utils.ltr_logging - INFO - Current:0.9291156530380249 Best:0.9070331454277039
+2026-06-05 09:15:23,836 - allrank.utils.ltr_logging - INFO - Current learning rate: 0.001
+2026-06-05 09:15:24,002 - allrank.utils.ltr_logging - INFO - Epoch : 4 Train loss: 8.58556297302246 Val loss: 7.41826229095459 Train ndcg_5 0.8929385542869568 Train ndcg_10 0.9269450902938843 Val ndcg_5 0.9143659472465515 Val ndcg_10 0.937552273273468
+2026-06-05 09:15:24,002 - allrank.utils.ltr_logging - INFO - Current:0.937552273273468 Best:0.9291156530380249
