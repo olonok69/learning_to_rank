@@ -1,5 +1,7 @@
 # Learning-to-Rank Demo
 
+> Documentación en español: [README.es.md](README.es.md)
+
 A runnable, self-contained demo of learning-to-rank (LTR) covering four modeling
 strategies on one shared synthetic query-grouped dataset:
 
@@ -36,7 +38,9 @@ For a condensed command-only cheat sheet, see [docs/DEMO_RUNBOOK.md](docs/DEMO_R
 │     └─ allrank/                # LibSVM format (train.txt, vali.txt)
 ├─ docs/
 │  ├─ DEMO_RUNBOOK.md            # quick command sequence + troubleshooting
-│  └─ THEORY_TO_PRACTICE_GUIDE.md# LTR theory mapped to this codebase
+│  ├─ DEMO_RUNBOOK.es.md         # Spanish runbook
+│  ├─ THEORY_TO_PRACTICE_GUIDE.md# LTR theory mapped to this codebase
+│  └─ THEORY_TO_PRACTICE_GUIDE.es.md
 ├─ outputs/
 │  └─ allrank/                   # generated config + training results/logs
 ├─ scripts/

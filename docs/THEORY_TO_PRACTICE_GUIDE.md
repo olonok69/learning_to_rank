@@ -1,5 +1,7 @@
 # Learning-to-Rank: Theory to Practice in This Repository
 
+> Versión en español: [THEORY_TO_PRACTICE_GUIDE.es.md](THEORY_TO_PRACTICE_GUIDE.es.md)
+
 This guide is a technical deep dive for engineers who want to understand:
 
 1. Why each ranking concept matters.
